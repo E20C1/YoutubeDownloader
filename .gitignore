@@ -1,0 +1,27 @@
+# 実行ファイル
+*.exe
+
+# ダウンロードフォルダ内のファイル
+downloads/*
+
+# キャッシュファイル
+__pycache__/
+*.py[cod]
+*$py.class
+
+# ログファイル
+*.log
+
+# 環境設定ファイル
+.env
+
+# 仮想環境
+venv/
+ENV/
+
+# VSCode設定
+.vscode/
+
+# その他の一時ファイル
+.DS_Store
+Thumbs.db

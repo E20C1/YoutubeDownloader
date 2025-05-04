@@ -50,7 +50,7 @@
   </tr>
   <tr>
     <td align="center">🗜️</td>
-    <td><b>ffmpeg</b><br>ダウンロードから変換処理に必要なツールです。<a href="https://ffmpeg.org/download.html">ffmpeg公式サイト</a>からダウンロードしてください</td>
+    <td><b>ffmpeg (必須)</b><br>動画・音声の変換処理に必要なツールです。下記の「<a href="#ffmpegのインストール方法-">インストール方法</a>」を参照してインストールしてください</td>
   </tr>
 </table>
 
@@ -276,6 +276,67 @@ $ source venv/bin/activate
 # 依存関係のインストール
 > pip install -r requirements.txt
 ```
+
+## ffmpegのインストール方法 📹
+
+アプリケーションを使用するには、ffmpegが必要です。以下の手順でインストールしてください。
+
+### Windowsでのインストール方法
+
+1. **公式サイトからダウンロード**
+   - [FFmpeg公式ダウンロードページ](https://ffmpeg.org/download.html) にアクセス
+   - 「Windows」セクションから「Windows builds from gyan.dev」を選択
+   - [ダウンロードページ(gyan.dev)](https://www.gyan.dev/ffmpeg/builds/) から「ffmpeg-release-essentials.zip」をダウンロード
+
+2. **ファイルを解凍**
+   - ダウンロードしたZIPファイルを解凍
+   - 解凍したフォルダの中にある`bin`フォルダを開く
+   - `ffmpeg.exe`ファイルを見つける
+
+3. **プロジェクトに配置**
+   - `ffmpeg.exe`をこのプロジェクトのルートディレクトリ（app.pyと同じ場所）にコピー
+
+### macOSでのインストール方法
+
+1. **Homebrewを使用してインストール**
+   ```bash
+   brew install ffmpeg
+   ```
+
+2. **パスを確認**
+   ```bash
+   which ffmpeg
+   ```
+   上記コマンドで表示されるパスをメモしておく
+
+3. **プロジェクトの設定を変更**
+   - `app.py`を開き、先頭部分にある`FFMPEG_PATH`変数があれば、それを先ほど確認したパスに設定
+
+### Linuxでのインストール方法
+
+1. **パッケージマネージャーでインストール**
+   ```bash
+   # Ubuntu/Debian
+   sudo apt update
+   sudo apt install ffmpeg
+   
+   # Fedora
+   sudo dnf install ffmpeg
+   ```
+
+2. **パスを確認**
+   ```bash
+   which ffmpeg
+   ```
+
+### 注意事項
+
+- ffmpegが正しくインストールされていない場合、動画のダウンロード時に次のようなエラーが表示されることがあります：
+  ```
+  ERROR: ffmpeg not found. Please install ffmpeg.
+  ```
+
+- Windowsでは、PATHを通してffmpegをシステム全体で使えるようにする方法もありますが、初心者の方は上記のようにプロジェクトフォルダに直接配置する方法が簡単です。
 
 ## ライセンス 📃
 
