@@ -30,13 +30,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const url = youtubeUrlInput.value.trim();
         
         if (!url) {
-            showError('YouTube動画のURLを入力してね😊');
+            showError('YouTube動画のURLを入力して下さい。');
             return;
         }
         
         // URLをチェック（簡易的なチェック）
         if (!url.includes('youtube.com/watch') && !url.includes('youtu.be/')) {
-            showError('YouTubeのURLじゃないみたい💦');
+            showError('YouTubeのURLを入力して下さい。');
             return;
         }
         

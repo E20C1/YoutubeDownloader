@@ -59,7 +59,7 @@ def get_video_info():
     logging.debug(f"受け取ったURL: {url}")
     
     if not url:
-        return jsonify({'error': 'URLが入力されていません😢'}), 400
+        return jsonify({'error': 'URLが入力されていません。'}), 400
     
     # YouTube URLの検証
     youtube_regex = r'(?:https?://)?(?:www\.)?(?:youtube\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})'
@@ -67,7 +67,7 @@ def get_video_info():
     
     if not youtube_match and ('youtube.com/' not in url and 'youtu.be/' not in url):
         logging.debug(f"URLが一致しません: {url}")
-        return jsonify({'error': 'YouTubeのURLじゃないみたい💦 正しいURLを入力してね！'}), 400
+        return jsonify({'error': 'YouTubeのURLを入力して下さい。'}), 400
     
     try:
         # もっとシンプルな実装に変更
@@ -251,7 +251,7 @@ def get_video_info():
     
     except Exception as e:
         logging.exception(f"動画情報取得中にエラー発生: {str(e)}")
-        return jsonify({'error': f'エラーが発生したよ😭 別の動画を試してみてね！'}), 500
+        return jsonify({'error': f'ERROR 500 取得できませんでした。'}), 500
 
 @app.route('/download', methods=['POST'])
 def download_video():
