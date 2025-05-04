@@ -5,7 +5,7 @@
 [![Framework: Flask](https://img.shields.io/badge/Framework-Flask-orange.svg)](https://flask.palletsprojects.com/)
 
 <p align="center">
-  <img src="https://i.imgur.com/qxzAXkF.png" alt="YouTube Downloader" width="600">
+  <img src="assets/icons/icon128.png" alt="YouTube Downloader" width="128">
 </p>
 
 > 教育目的で作られた軽量WebベースのYouTubeダウンロードツールです。
