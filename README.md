@@ -125,7 +125,19 @@
 ## 動作の仕組み 🔧
 
 <div align="center">
-  <img src="https://i.imgur.com/vXX0Sqz.png" alt="システム構成図" width="600">
+  <code>URL入力</code> ➡️ <code>サーバーに送信</code> ➡️ <code>yt-dlpで動画情報取得</code> ➡️ <code>メタデータ・サムネイル表示</code> ➡️ <code>品質選択</code> ➡️ <code>ダウンロード実行</code> ➡️ <code>ffmpegで処理</code> ➡️ <code>ファイル保存</code>
+</div>
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center"><b>💻 フロントエンド</b></td>
+      <td align="center">↔️</td>
+      <td align="center"><b>🖥️ Flaskサーバー</b></td>
+      <td align="center">↔️</td>
+      <td align="center"><b>🎥 YouTube API</b></td>
+    </tr>
+  </table>
 </div>
 
 ### 使用している技術
